@@ -147,6 +147,13 @@ dependencies {
             )
         )
 
+    "DYNAMICWATERS" setVar (
+            modImpl("maven.modrinth:dynamic-waters-realistic-flowing-rivers:",
+                12100 to ver(null, null, "r4iJrgbS"),
+                12000 to ver(null, "1XzGBXXE",  null)
+            )
+        )
+
     // CREATE #https://wiki.createmod.net/developers/
     if (platform.isFabric && mcVersion == 12001) {
         modImplementation("com.simibubi.create:create-fabric:6.0.8.1+build.1744-mc1.20.1") {
