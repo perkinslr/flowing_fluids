@@ -19,7 +19,7 @@ import net.minecraft.world.level.Level;
 //$$        var lake = HydrologyManager.findLake(blockPos.getX(), blockPos.getZ(), null, level, null, true);
 //$$        if (lake != null) {
 //$$            int lakeLo = lake.waterY - 12;
-//$$            int lakeHi = lake.waterY + 3;
+//$$            int lakeHi = lake.waterY + 0;
 //$$            var y = blockPos.getY();
 //$$            if (lakeLo <= y && y <= lakeHi) {
 //$$                return 3; // in band and in biome
