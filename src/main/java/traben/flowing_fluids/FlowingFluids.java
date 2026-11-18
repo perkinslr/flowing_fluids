@@ -114,7 +114,7 @@ public class FlowingFluids {
 
         CREATE = isThisModLoaded("create");
         TWILIGHT_FOREST = isThisModLoaded("twilightforest");
-        //#if DYNAMICWATERS && !FABRIC
+        //#if DYNAMICWATERS
         if (isThisModLoaded("dynamicwaters")) {
             //$$ seaLevel = new traben.flowing_fluids.api.DynamicWatersSeaLevelImpl();
         }

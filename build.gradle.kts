@@ -149,7 +149,8 @@ dependencies {
 
     "DYNAMICWATERS" setVar (
             modImpl("maven.modrinth:dynamic-waters-realistic-flowing-rivers:",
-                12100 to ver(null, null, "r4iJrgbS"),
+                12200 to null,
+                12100 to ver("98TiJ1Fg", null, "r4iJrgbS"),
                 12000 to ver(null, "1XzGBXXE",  null)
             )
         )

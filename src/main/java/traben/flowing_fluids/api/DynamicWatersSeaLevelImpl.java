@@ -5,7 +5,7 @@ import traben.flowing_fluids.FFFluidUtils;
 import traben.flowing_fluids.FlowingFluids;
 import net.minecraft.world.level.Level;
 
-//#if DYNAMICWATERS && !FABRIC
+//#if DYNAMICWATERS
 //$$ import com.AdamNew.dynamicwaters.HydrologyManager;
 //$$
 //$$public class DynamicWatersSeaLevelImpl implements ISeaLevel {
