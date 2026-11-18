@@ -70,11 +70,9 @@ public abstract class MixinWaterFluid extends FlowingFluid {
                     //#endif
         )) return;
 
-        boolean isWithinInfBiomeHeights = FlowingFluids.config.fastBiomeRefillAtSeaLevelOnly
-                ? FFFluidUtils.seaLevel(level) == blockPos.getY() || FFFluidUtils.seaLevel(level) - 1 == blockPos.getY()
-                : FFFluidUtils.seaLevel(level) == blockPos.getY() && blockPos.getY() > 0;
-
-        boolean isInfBiome = FFFluidUtils.matchInfiniteBiomes(level.getBiome(blockPos));
+        byte isInf = FlowingFluids.seaLevel.isInf(blockPos, level);
+        boolean isWithinInfBiomeHeights = (isInf & 1) > 0;
+        boolean isInfBiome = (isInf & 2) > 0;
 
         if (amount < 8) {
             boolean hasSkyLight = level.getBrightness(LightLayer.SKY, blockPos) > 0; // is close enough to sky/atmosphere access

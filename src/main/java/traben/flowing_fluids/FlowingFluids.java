@@ -23,7 +23,8 @@ import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import traben.flowing_fluids.config.FFConfig;
-
+import traben.flowing_fluids.api.SeaLevelImpl;
+import traben.flowing_fluids.api.ISeaLevel;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -74,6 +75,7 @@ public class FlowingFluids {
     public static Map<Fluid, List<String>> nonDisplacerTagIds = new Object2ObjectOpenHashMap<>();
     public static Map<Fluid, List<String>> nonDisplacerIds = new Object2ObjectOpenHashMap<>();
 
+    public static ISeaLevel seaLevel = new SeaLevelImpl();
 
     public static Set<TagKey<Biome>> infiniteBiomeTags = new HashSet<>();
     public static Set<ResourceKey<Biome>> infiniteBiomes = new HashSet<>();
@@ -112,6 +114,11 @@ public class FlowingFluids {
 
         CREATE = isThisModLoaded("create");
         TWILIGHT_FOREST = isThisModLoaded("twilightforest");
+        //#if DYNAMICWATERS && !FABRIC
+        if (isThisModLoaded("dynamicwaters")) {
+            //$$ seaLevel = new traben.flowing_fluids.api.DynamicWatersSeaLevelImpl();
+        }
+        //#endif
     }
 
     private static boolean showFirstMessage = true;
